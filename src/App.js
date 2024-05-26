@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { Profile } from "./userComponent";
+import { UserBio } from "./userComponent";
+import { useState } from "react";
 
-function App() {
+const App = () => {
+  const [name] = useState("WIll smith");
+  const bio =
+    "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam, odio?";
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Profile nameProp={name} bioProp={bio} />
+      <Profile nameProp={"Sam "} bioProp={"Sam Bio"} />
+      <Profile nameProp={"Will"} bioProp={"Will bio"} />
+      <Profile nameProp={"Jack"} bioProp={"Jack Bio"} />
+
+      {/* <UserBio /> */}
+    </>
   );
-}
+};
 
 export default App;
